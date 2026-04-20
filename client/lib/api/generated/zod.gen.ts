@@ -594,28 +594,24 @@ export const zHttpValidationError = z.object({
     detail: z.array(zValidationError).optional()
 });
 
-export const zGetAuthorsData = z.object({
-    body: z.never().optional(),
-    path: z.never().optional(),
-    query: z.object({
-        locale: z.enum([
-            'ar',
-            'de',
-            'en',
-            'es',
-            'fa',
-            'fi',
-            'fr',
-            'he',
-            'it',
-            'ko',
-            'pt-br',
-            'ru',
-            'tr',
-            'vi',
-            'zh-cn'
-        ])
-    })
+export const zGetAuthorsQuery = z.object({
+    locale: z.enum([
+        'ar',
+        'de',
+        'en',
+        'es',
+        'fa',
+        'fi',
+        'fr',
+        'he',
+        'it',
+        'ko',
+        'pt-br',
+        'ru',
+        'tr',
+        'vi',
+        'zh-cn'
+    ])
 });
 
 /**
@@ -625,12 +621,6 @@ export const zGetAuthorsData = z.object({
  */
 export const zGetAuthorsResponse = z.array(zAuthor);
 
-export const zGetAuthorsParamsData = z.object({
-    body: z.never().optional(),
-    path: z.never().optional(),
-    query: z.never().optional()
-});
-
 /**
  * Response Authors-Get Author Params
  *
@@ -638,30 +628,28 @@ export const zGetAuthorsParamsData = z.object({
  */
 export const zGetAuthorsParamsResponse = z.array(zSlugParam);
 
-export const zGetAuthorsBySlugData = z.object({
-    body: z.never().optional(),
-    path: z.object({
-        slug: z.string()
-    }),
-    query: z.object({
-        locale: z.enum([
-            'ar',
-            'de',
-            'en',
-            'es',
-            'fa',
-            'fi',
-            'fr',
-            'he',
-            'it',
-            'ko',
-            'pt-br',
-            'ru',
-            'tr',
-            'vi',
-            'zh-cn'
-        ])
-    })
+export const zGetAuthorsBySlugPath = z.object({
+    slug: z.string()
+});
+
+export const zGetAuthorsBySlugQuery = z.object({
+    locale: z.enum([
+        'ar',
+        'de',
+        'en',
+        'es',
+        'fa',
+        'fi',
+        'fr',
+        'he',
+        'it',
+        'ko',
+        'pt-br',
+        'ru',
+        'tr',
+        'vi',
+        'zh-cn'
+    ])
 });
 
 /**
@@ -669,28 +657,24 @@ export const zGetAuthorsBySlugData = z.object({
  */
 export const zGetAuthorsBySlugResponse = zAuthorDetail;
 
-export const zGetLibraryData = z.object({
-    body: z.never().optional(),
-    path: z.never().optional(),
-    query: z.object({
-        locale: z.enum([
-            'ar',
-            'de',
-            'en',
-            'es',
-            'fa',
-            'fi',
-            'fr',
-            'he',
-            'it',
-            'ko',
-            'pt-br',
-            'ru',
-            'tr',
-            'vi',
-            'zh-cn'
-        ])
-    })
+export const zGetLibraryQuery = z.object({
+    locale: z.enum([
+        'ar',
+        'de',
+        'en',
+        'es',
+        'fa',
+        'fi',
+        'fr',
+        'he',
+        'it',
+        'ko',
+        'pt-br',
+        'ru',
+        'tr',
+        'vi',
+        'zh-cn'
+    ])
 });
 
 /**
@@ -700,24 +684,12 @@ export const zGetLibraryData = z.object({
  */
 export const zGetLibraryResponse = z.array(zDocumentIndex);
 
-export const zGetLibraryParamsData = z.object({
-    body: z.never().optional(),
-    path: z.never().optional(),
-    query: z.never().optional()
-});
-
 /**
  * Response Library-Get Library Params
  *
  * Doc slugs for SSG
  */
 export const zGetLibraryParamsResponse = z.array(zSlugParam);
-
-export const zGetLibraryParamsNodesData = z.object({
-    body: z.never().optional(),
-    path: z.never().optional(),
-    query: z.never().optional()
-});
 
 /**
  * Response Library-Get Library Node Params
@@ -726,28 +698,24 @@ export const zGetLibraryParamsNodesData = z.object({
  */
 export const zGetLibraryParamsNodesResponse = z.array(zDocumentNodeParams);
 
-export const zGetLibraryHomeData = z.object({
-    body: z.never().optional(),
-    path: z.never().optional(),
-    query: z.object({
-        locale: z.enum([
-            'ar',
-            'de',
-            'en',
-            'es',
-            'fa',
-            'fi',
-            'fr',
-            'he',
-            'it',
-            'ko',
-            'pt-br',
-            'ru',
-            'tr',
-            'vi',
-            'zh-cn'
-        ])
-    })
+export const zGetLibraryHomeQuery = z.object({
+    locale: z.enum([
+        'ar',
+        'de',
+        'en',
+        'es',
+        'fa',
+        'fi',
+        'fr',
+        'he',
+        'it',
+        'ko',
+        'pt-br',
+        'ru',
+        'tr',
+        'vi',
+        'zh-cn'
+    ])
 });
 
 /**
@@ -757,30 +725,28 @@ export const zGetLibraryHomeData = z.object({
  */
 export const zGetLibraryHomeResponse = z.array(zDocumentIndex);
 
-export const zGetLibraryBySlugData = z.object({
-    body: z.never().optional(),
-    path: z.object({
-        slug: z.string()
-    }),
-    query: z.object({
-        locale: z.enum([
-            'ar',
-            'de',
-            'en',
-            'es',
-            'fa',
-            'fi',
-            'fr',
-            'he',
-            'it',
-            'ko',
-            'pt-br',
-            'ru',
-            'tr',
-            'vi',
-            'zh-cn'
-        ])
-    })
+export const zGetLibraryBySlugPath = z.object({
+    slug: z.string()
+});
+
+export const zGetLibraryBySlugQuery = z.object({
+    locale: z.enum([
+        'ar',
+        'de',
+        'en',
+        'es',
+        'fa',
+        'fi',
+        'fr',
+        'he',
+        'it',
+        'ko',
+        'pt-br',
+        'ru',
+        'tr',
+        'vi',
+        'zh-cn'
+    ])
 });
 
 /**
@@ -788,31 +754,29 @@ export const zGetLibraryBySlugData = z.object({
  */
 export const zGetLibraryBySlugResponse = zDocument;
 
-export const zGetLibraryByDocSlugBySlugData = z.object({
-    body: z.never().optional(),
-    path: z.object({
-        slug: z.string(),
-        doc_slug: z.string()
-    }),
-    query: z.object({
-        locale: z.enum([
-            'ar',
-            'de',
-            'en',
-            'es',
-            'fa',
-            'fi',
-            'fr',
-            'he',
-            'it',
-            'ko',
-            'pt-br',
-            'ru',
-            'tr',
-            'vi',
-            'zh-cn'
-        ])
-    })
+export const zGetLibraryByDocSlugBySlugPath = z.object({
+    slug: z.string(),
+    doc_slug: z.string()
+});
+
+export const zGetLibraryByDocSlugBySlugQuery = z.object({
+    locale: z.enum([
+        'ar',
+        'de',
+        'en',
+        'es',
+        'fa',
+        'fi',
+        'fr',
+        'he',
+        'it',
+        'ko',
+        'pt-br',
+        'ru',
+        'tr',
+        'vi',
+        'zh-cn'
+    ])
 });
 
 /**
@@ -820,28 +784,24 @@ export const zGetLibraryByDocSlugBySlugData = z.object({
  */
 export const zGetLibraryByDocSlugBySlugResponse = zDocumentNode;
 
-export const zGetMempoolSeriesData = z.object({
-    body: z.never().optional(),
-    path: z.never().optional(),
-    query: z.object({
-        locale: z.enum([
-            'ar',
-            'de',
-            'en',
-            'es',
-            'fa',
-            'fi',
-            'fr',
-            'he',
-            'it',
-            'ko',
-            'pt-br',
-            'ru',
-            'tr',
-            'vi',
-            'zh-cn'
-        ])
-    })
+export const zGetMempoolSeriesQuery = z.object({
+    locale: z.enum([
+        'ar',
+        'de',
+        'en',
+        'es',
+        'fa',
+        'fi',
+        'fr',
+        'he',
+        'it',
+        'ko',
+        'pt-br',
+        'ru',
+        'tr',
+        'vi',
+        'zh-cn'
+    ])
 });
 
 /**
@@ -851,12 +811,6 @@ export const zGetMempoolSeriesData = z.object({
  */
 export const zGetMempoolSeriesResponse = z.array(zMempoolSeries);
 
-export const zGetMempoolSeriesParamsData = z.object({
-    body: z.never().optional(),
-    path: z.never().optional(),
-    query: z.never().optional()
-});
-
 /**
  * Response Mempool-Get Mempool Series Params
  *
@@ -864,30 +818,28 @@ export const zGetMempoolSeriesParamsData = z.object({
  */
 export const zGetMempoolSeriesParamsResponse = z.array(zSlugParam);
 
-export const zGetMempoolSeriesBySlugData = z.object({
-    body: z.never().optional(),
-    path: z.object({
-        slug: z.string()
-    }),
-    query: z.object({
-        locale: z.enum([
-            'ar',
-            'de',
-            'en',
-            'es',
-            'fa',
-            'fi',
-            'fr',
-            'he',
-            'it',
-            'ko',
-            'pt-br',
-            'ru',
-            'tr',
-            'vi',
-            'zh-cn'
-        ])
-    })
+export const zGetMempoolSeriesBySlugPath = z.object({
+    slug: z.string()
+});
+
+export const zGetMempoolSeriesBySlugQuery = z.object({
+    locale: z.enum([
+        'ar',
+        'de',
+        'en',
+        'es',
+        'fa',
+        'fi',
+        'fr',
+        'he',
+        'it',
+        'ko',
+        'pt-br',
+        'ru',
+        'tr',
+        'vi',
+        'zh-cn'
+    ])
 });
 
 /**
@@ -895,28 +847,24 @@ export const zGetMempoolSeriesBySlugData = z.object({
  */
 export const zGetMempoolSeriesBySlugResponse = zMempoolSeriesFull;
 
-export const zGetMempoolData = z.object({
-    body: z.never().optional(),
-    path: z.never().optional(),
-    query: z.object({
-        locale: z.enum([
-            'ar',
-            'de',
-            'en',
-            'es',
-            'fa',
-            'fi',
-            'fr',
-            'he',
-            'it',
-            'ko',
-            'pt-br',
-            'ru',
-            'tr',
-            'vi',
-            'zh-cn'
-        ])
-    })
+export const zGetMempoolQuery = z.object({
+    locale: z.enum([
+        'ar',
+        'de',
+        'en',
+        'es',
+        'fa',
+        'fi',
+        'fr',
+        'he',
+        'it',
+        'ko',
+        'pt-br',
+        'ru',
+        'tr',
+        'vi',
+        'zh-cn'
+    ])
 });
 
 /**
@@ -926,29 +874,25 @@ export const zGetMempoolData = z.object({
  */
 export const zGetMempoolResponse = z.array(zMempoolPostIndex);
 
-export const zGetMempoolLatestData = z.object({
-    body: z.never().optional(),
-    path: z.never().optional(),
-    query: z.object({
-        locale: z.enum([
-            'ar',
-            'de',
-            'en',
-            'es',
-            'fa',
-            'fi',
-            'fr',
-            'he',
-            'it',
-            'ko',
-            'pt-br',
-            'ru',
-            'tr',
-            'vi',
-            'zh-cn'
-        ]),
-        num: z.int().gt(0).optional().default(3)
-    })
+export const zGetMempoolLatestQuery = z.object({
+    locale: z.enum([
+        'ar',
+        'de',
+        'en',
+        'es',
+        'fa',
+        'fi',
+        'fr',
+        'he',
+        'it',
+        'ko',
+        'pt-br',
+        'ru',
+        'tr',
+        'vi',
+        'zh-cn'
+    ]),
+    num: z.int().gt(0).optional().default(3)
 });
 
 /**
@@ -958,12 +902,6 @@ export const zGetMempoolLatestData = z.object({
  */
 export const zGetMempoolLatestResponse = z.array(zMempoolPostIndex);
 
-export const zGetMempoolParamsData = z.object({
-    body: z.never().optional(),
-    path: z.never().optional(),
-    query: z.never().optional()
-});
-
 /**
  * Response Mempool-Get Mempool Params
  *
@@ -971,29 +909,25 @@ export const zGetMempoolParamsData = z.object({
  */
 export const zGetMempoolParamsResponse = z.array(zSlugParam);
 
-export const zGetMempoolFeedData = z.object({
-    body: z.never().optional(),
-    path: z.never().optional(),
-    query: z.object({
-        locale: z.enum([
-            'ar',
-            'de',
-            'en',
-            'es',
-            'fa',
-            'fi',
-            'fr',
-            'he',
-            'it',
-            'ko',
-            'pt-br',
-            'ru',
-            'tr',
-            'vi',
-            'zh-cn'
-        ]),
-        format: zFeedFormat.optional().default('rss')
-    })
+export const zGetMempoolFeedQuery = z.object({
+    locale: z.enum([
+        'ar',
+        'de',
+        'en',
+        'es',
+        'fa',
+        'fi',
+        'fr',
+        'he',
+        'it',
+        'ko',
+        'pt-br',
+        'ru',
+        'tr',
+        'vi',
+        'zh-cn'
+    ]),
+    format: zFeedFormat.optional().default('rss')
 });
 
 /**
@@ -1001,42 +935,34 @@ export const zGetMempoolFeedData = z.object({
  */
 export const zGetMempoolFeedResponse = z.string();
 
-export const zGetMempoolBySlugData = z.object({
-    body: z.never().optional(),
-    path: z.object({
-        slug: z.string()
-    }),
-    query: z.object({
-        locale: z.enum([
-            'ar',
-            'de',
-            'en',
-            'es',
-            'fa',
-            'fi',
-            'fr',
-            'he',
-            'it',
-            'ko',
-            'pt-br',
-            'ru',
-            'tr',
-            'vi',
-            'zh-cn'
-        ])
-    })
+export const zGetMempoolBySlugPath = z.object({
+    slug: z.string()
+});
+
+export const zGetMempoolBySlugQuery = z.object({
+    locale: z.enum([
+        'ar',
+        'de',
+        'en',
+        'es',
+        'fa',
+        'fi',
+        'fr',
+        'he',
+        'it',
+        'ko',
+        'pt-br',
+        'ru',
+        'tr',
+        'vi',
+        'zh-cn'
+    ])
 });
 
 /**
  * Post with content
  */
 export const zGetMempoolBySlugResponse = zMempoolPost;
-
-export const zGetPodcastsData = z.object({
-    body: z.never().optional(),
-    path: z.never().optional(),
-    query: z.never().optional()
-});
 
 /**
  * Response Podcasts-Get Podcasts
@@ -1045,24 +971,12 @@ export const zGetPodcastsData = z.object({
  */
 export const zGetPodcastsResponse = z.array(zPodcastBase);
 
-export const zGetPodcastsHomeData = z.object({
-    body: z.never().optional(),
-    path: z.never().optional(),
-    query: z.never().optional()
-});
-
 /**
  * Response Podcasts-Get Home Podcasts
  *
  * Featured podcasts
  */
 export const zGetPodcastsHomeResponse = z.array(zPodcastBase);
-
-export const zGetPodcastsEpisodesData = z.object({
-    body: z.never().optional(),
-    path: z.never().optional(),
-    query: z.never().optional()
-});
 
 /**
  * Response Podcasts-Get Episodes
@@ -1071,12 +985,8 @@ export const zGetPodcastsEpisodesData = z.object({
  */
 export const zGetPodcastsEpisodesResponse = z.array(zEpisodeParams);
 
-export const zGetPodcastsByPodcastSlugFeedData = z.object({
-    body: z.never().optional(),
-    path: z.object({
-        podcast_slug: z.string()
-    }),
-    query: z.never().optional()
+export const zGetPodcastsByPodcastSlugFeedPath = z.object({
+    podcast_slug: z.string()
 });
 
 /**
@@ -1084,12 +994,8 @@ export const zGetPodcastsByPodcastSlugFeedData = z.object({
  */
 export const zGetPodcastsByPodcastSlugFeedResponse = z.string();
 
-export const zGetPodcastsByPodcastSlugData = z.object({
-    body: z.never().optional(),
-    path: z.object({
-        podcast_slug: z.string()
-    }),
-    query: z.never().optional()
+export const zGetPodcastsByPodcastSlugPath = z.object({
+    podcast_slug: z.string()
 });
 
 /**
@@ -1097,25 +1003,15 @@ export const zGetPodcastsByPodcastSlugData = z.object({
  */
 export const zGetPodcastsByPodcastSlugResponse = zPodcastDetail;
 
-export const zGetPodcastsByPodcastSlugByEpisodeSlugData = z.object({
-    body: z.never().optional(),
-    path: z.object({
-        podcast_slug: z.string(),
-        episode_slug: z.string()
-    }),
-    query: z.never().optional()
+export const zGetPodcastsByPodcastSlugByEpisodeSlugPath = z.object({
+    podcast_slug: z.string(),
+    episode_slug: z.string()
 });
 
 /**
  * Episode details
  */
 export const zGetPodcastsByPodcastSlugByEpisodeSlugResponse = zEpisode;
-
-export const zGetSatoshiEmailsData = z.object({
-    body: z.never().optional(),
-    path: z.never().optional(),
-    query: z.never().optional()
-});
 
 /**
  * Response Satoshi-Get Emails
@@ -1124,12 +1020,6 @@ export const zGetSatoshiEmailsData = z.object({
  */
 export const zGetSatoshiEmailsResponse = z.array(zSatoshiEmail);
 
-export const zGetSatoshiEmailsThreadsData = z.object({
-    body: z.never().optional(),
-    path: z.never().optional(),
-    query: z.never().optional()
-});
-
 /**
  * Response Satoshi-Get Email Threads
  *
@@ -1137,12 +1027,8 @@ export const zGetSatoshiEmailsThreadsData = z.object({
  */
 export const zGetSatoshiEmailsThreadsResponse = z.array(zEmailThreadBase);
 
-export const zGetSatoshiEmailsBySourceData = z.object({
-    body: z.never().optional(),
-    path: z.object({
-        source: zEmailSource
-    }),
-    query: z.never().optional()
+export const zGetSatoshiEmailsBySourcePath = z.object({
+    source: zEmailSource
 });
 
 /**
@@ -1152,12 +1038,8 @@ export const zGetSatoshiEmailsBySourceData = z.object({
  */
 export const zGetSatoshiEmailsBySourceResponse = z.array(zSatoshiEmail);
 
-export const zGetSatoshiEmailsBySourceThreadsData = z.object({
-    body: z.never().optional(),
-    path: z.object({
-        source: zEmailSource
-    }),
-    query: z.never().optional()
+export const zGetSatoshiEmailsBySourceThreadsPath = z.object({
+    source: zEmailSource
 });
 
 /**
@@ -1167,15 +1049,13 @@ export const zGetSatoshiEmailsBySourceThreadsData = z.object({
  */
 export const zGetSatoshiEmailsBySourceThreadsResponse = z.array(zEmailThreadBase);
 
-export const zGetSatoshiEmailsBySourceThreadsByThreadIdData = z.object({
-    body: z.never().optional(),
-    path: z.object({
-        source: zEmailSource,
-        thread_id: z.int()
-    }),
-    query: z.object({
-        satoshi: z.boolean().optional().default(false)
-    }).optional()
+export const zGetSatoshiEmailsBySourceThreadsByThreadIdPath = z.object({
+    source: zEmailSource,
+    thread_id: z.int()
+});
+
+export const zGetSatoshiEmailsBySourceThreadsByThreadIdQuery = z.object({
+    satoshi: z.boolean().optional().default(false)
 });
 
 /**
@@ -1183,25 +1063,15 @@ export const zGetSatoshiEmailsBySourceThreadsByThreadIdData = z.object({
  */
 export const zGetSatoshiEmailsBySourceThreadsByThreadIdResponse = zEmailThread;
 
-export const zGetSatoshiEmailsBySourceBySatoshiIdData = z.object({
-    body: z.never().optional(),
-    path: z.object({
-        source: zEmailSource,
-        satoshi_id: z.int()
-    }),
-    query: z.never().optional()
+export const zGetSatoshiEmailsBySourceBySatoshiIdPath = z.object({
+    source: zEmailSource,
+    satoshi_id: z.int()
 });
 
 /**
  * Email with nav
  */
 export const zGetSatoshiEmailsBySourceBySatoshiIdResponse = zEmailDetail;
-
-export const zGetSatoshiPostsData = z.object({
-    body: z.never().optional(),
-    path: z.never().optional(),
-    query: z.never().optional()
-});
 
 /**
  * Response Satoshi-Get Forum Posts
@@ -1210,12 +1080,6 @@ export const zGetSatoshiPostsData = z.object({
  */
 export const zGetSatoshiPostsResponse = z.array(zSatoshiForumPost);
 
-export const zGetSatoshiPostsThreadsData = z.object({
-    body: z.never().optional(),
-    path: z.never().optional(),
-    query: z.never().optional()
-});
-
 /**
  * Response Satoshi-Get Forum Threads
  *
@@ -1223,12 +1087,8 @@ export const zGetSatoshiPostsThreadsData = z.object({
  */
 export const zGetSatoshiPostsThreadsResponse = z.array(zForumThreadBase);
 
-export const zGetSatoshiPostsBySourceData = z.object({
-    body: z.never().optional(),
-    path: z.object({
-        source: zForumPostSource
-    }),
-    query: z.never().optional()
+export const zGetSatoshiPostsBySourcePath = z.object({
+    source: zForumPostSource
 });
 
 /**
@@ -1238,12 +1098,8 @@ export const zGetSatoshiPostsBySourceData = z.object({
  */
 export const zGetSatoshiPostsBySourceResponse = z.array(zSatoshiForumPost);
 
-export const zGetSatoshiPostsBySourceThreadsData = z.object({
-    body: z.never().optional(),
-    path: z.object({
-        source: zForumPostSource
-    }),
-    query: z.never().optional()
+export const zGetSatoshiPostsBySourceThreadsPath = z.object({
+    source: zForumPostSource
 });
 
 /**
@@ -1253,15 +1109,13 @@ export const zGetSatoshiPostsBySourceThreadsData = z.object({
  */
 export const zGetSatoshiPostsBySourceThreadsResponse = z.array(zForumThreadBase);
 
-export const zGetSatoshiPostsBySourceThreadsByThreadIdData = z.object({
-    body: z.never().optional(),
-    path: z.object({
-        source: zForumPostSource,
-        thread_id: z.int()
-    }),
-    query: z.object({
-        satoshi: z.boolean().optional().default(false)
-    }).optional()
+export const zGetSatoshiPostsBySourceThreadsByThreadIdPath = z.object({
+    source: zForumPostSource,
+    thread_id: z.int()
+});
+
+export const zGetSatoshiPostsBySourceThreadsByThreadIdQuery = z.object({
+    satoshi: z.boolean().optional().default(false)
 });
 
 /**
@@ -1269,25 +1123,15 @@ export const zGetSatoshiPostsBySourceThreadsByThreadIdData = z.object({
  */
 export const zGetSatoshiPostsBySourceThreadsByThreadIdResponse = zForumThread;
 
-export const zGetSatoshiPostsBySourceBySatoshiIdData = z.object({
-    body: z.never().optional(),
-    path: z.object({
-        source: zForumPostSource,
-        satoshi_id: z.int()
-    }),
-    query: z.never().optional()
+export const zGetSatoshiPostsBySourceBySatoshiIdPath = z.object({
+    source: zForumPostSource,
+    satoshi_id: z.int()
 });
 
 /**
  * Post with nav
  */
 export const zGetSatoshiPostsBySourceBySatoshiIdResponse = zForumPostDetail;
-
-export const zGetSatoshiQuotesData = z.object({
-    body: z.never().optional(),
-    path: z.never().optional(),
-    query: z.never().optional()
-});
 
 /**
  * Response Satoshi-Get Quote Categories
@@ -1296,24 +1140,14 @@ export const zGetSatoshiQuotesData = z.object({
  */
 export const zGetSatoshiQuotesResponse = z.array(zQuoteCategoryBase);
 
-export const zGetSatoshiQuotesBySlugData = z.object({
-    body: z.never().optional(),
-    path: z.object({
-        slug: z.string()
-    }),
-    query: z.never().optional()
+export const zGetSatoshiQuotesBySlugPath = z.object({
+    slug: z.string()
 });
 
 /**
  * Category with quotes
  */
 export const zGetSatoshiQuotesBySlugResponse = zQuoteCategory;
-
-export const zGetSkepticsData = z.object({
-    body: z.never().optional(),
-    path: z.never().optional(),
-    query: z.never().optional()
-});
 
 /**
  * Response Skeptics-Get Skeptics
