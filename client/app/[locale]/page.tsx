@@ -114,6 +114,7 @@ export default async function HomePage(props: LocaleParams) {
             <div className="mt-4 flex flex-col items-baseline gap-1 max-md:px-5 lg:flex-row lg:gap-3.5">
               <h3 className="text-xl font-bold">
                 <Trans
+                  t={t}
                   i18nKey="gts_announcement"
                   components={{
                     i: <em />,
@@ -315,6 +316,7 @@ export default async function HomePage(props: LocaleParams) {
                 <p className="mb-2">{t("donation_message")}</p>
                 <p className="italic">
                   <Trans
+                    t={t}
                     i18nKey="donation_message_cont"
                     components={{
                       strong: <strong />,
