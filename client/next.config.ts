@@ -1,13 +1,8 @@
-import { createJiti } from "jiti";
+import type { NextConfig } from "next";
 
-const jiti = createJiti(import.meta.url, {
-  alias: {
-    "@": new URL("./", import.meta.url),
-  },
-});
-const { env } = await jiti.import("./env.ts");
-const { externalUrls } = await jiti.import("./lib/urls.ts");
-const { locales, defaultLocale } = await jiti.import("./i18n.ts");
+import { env } from "./env";
+import { defaultLocale, locales } from "./i18n";
+import { externalUrls } from "./lib/urls-client";
 
 const satoshiDestination = `${
   env.VERCEL_ENV === "development" ? "http://" : "https://"
@@ -19,13 +14,12 @@ const satoshiDestination = `${
 
 const cdnBaseUrl = new URL(env.CDN_BASE_URL);
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   images: {
     dangerouslyAllowLocalIP: env.VERCEL_ENV === "development",
     remotePatterns: [
       {
-        protocol: cdnBaseUrl.protocol.replace(/:$/, ""),
+        protocol: cdnBaseUrl.protocol.replace(/:$/, "") as "http" | "https",
         hostname: cdnBaseUrl.hostname,
         port: cdnBaseUrl.port,
         pathname:
@@ -52,19 +46,16 @@ const nextConfig = {
       (env.VERCEL_ENV === "development" && env.MAP_DOMAIN)
     ) {
       redirects.push(
-        // No locale prefix - preserve path as-is
         {
           source: "/satoshi/:path*",
           destination: `${satoshiDestination}/:path*`,
           permanent: true,
         },
-        // Default locale (en) - strip it from destination
         {
           source: "/en/satoshi/:path*",
           destination: `${satoshiDestination}/:path*`,
           permanent: true,
         },
-        // Non-default locales - preserve locale in destination
         {
           source: `/:locale(${locales.filter((l) => l !== defaultLocale).join("|")})/satoshi/:path*`,
           destination: `${satoshiDestination}/:locale/:path*`,
