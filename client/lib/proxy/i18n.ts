@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { defaultLocale, locales } from "@/i18n";
+import { defaultLocale, isLocale } from "@/i18n";
 
 /**
  * Extract locale prefix from pathname (first segment after /)
@@ -8,9 +8,7 @@ import { defaultLocale, locales } from "@/i18n";
  */
 function getLocalePrefix(pathname: string): Locale | undefined {
   const firstSegment = pathname.split("/")[1];
-  return locales.includes(firstSegment as Locale)
-    ? (firstSegment as Locale)
-    : undefined;
+  return isLocale(firstSegment) ? firstSegment : undefined;
 }
 
 /**

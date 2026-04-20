@@ -1,15 +1,12 @@
 import { locales as allLocales } from "@/i18n";
-import { CapitalizedLocale } from "@/types/i18n";
 import { formatLocale } from "@/utils/strings";
-
-export type LocalizedUrlObject = { [K in CapitalizedLocale]: string };
 
 export function createLocalizedUrlObject(
   urlFunc: (locale: Locale) => string,
   locales: Locale[] = [...allLocales],
-): LocalizedUrlObject {
-  return locales.reduce((obj, locale) => {
+): Record<string, string> {
+  return locales.reduce<Record<string, string>>((obj, locale) => {
     obj[formatLocale(locale)] = urlFunc(locale);
     return obj;
-  }, {} as LocalizedUrlObject);
+  }, {});
 }

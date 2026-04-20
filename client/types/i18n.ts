@@ -7,8 +7,4 @@ declare global {
   } & U;
 }
 
-type CapitalizeRegion<T> = T extends `${infer Lang}-${infer Region}`
-  ? `${Lang}-${Uppercase<Region>}`
-  : T;
-
-export type CapitalizedLocale = CapitalizeRegion<Locale>;
+export {};

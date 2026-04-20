@@ -10,7 +10,7 @@ import {
   api,
 } from "@/lib/api";
 import { urls } from "@/lib/urls";
-import { LocalizedUrlObject, createLocalizedUrlObject } from "@/utils/sitemap";
+import { createLocalizedUrlObject } from "@/utils/sitemap";
 import { formatLocale } from "@/utils/strings";
 
 async function getAuthorUrls(): Promise<MetadataRoute.Sitemap> {
@@ -37,8 +37,8 @@ async function getAuthorUrls(): Promise<MetadataRoute.Sitemap> {
           return obj;
         },
         langs.length > 0
-          ? ({ en: urls("en").authors.detail(slug) } as LocalizedUrlObject)
-          : ({} as LocalizedUrlObject),
+          ? ({ en: urls("en").authors.detail(slug) } as Record<string, string>)
+          : ({} as Record<string, string>),
       ),
     },
   }));
@@ -61,8 +61,8 @@ async function getLibraryUrls(): Promise<MetadataRoute.Sitemap> {
               return obj;
             },
             doc.translations.length > 0
-              ? ({ en: urls("en").library.doc(doc.slug) } as LocalizedUrlObject)
-              : ({} as LocalizedUrlObject),
+              ? ({ en: urls("en").library.doc(doc.slug) } as Record<string, string>)
+              : ({} as Record<string, string>),
           ),
         },
       },
@@ -93,8 +93,8 @@ async function getMempoolUrls(): Promise<MetadataRoute.Sitemap> {
           return obj;
         },
         post.translations.length > 0
-          ? ({ en: urls("en").mempool.post(post.slug) } as LocalizedUrlObject)
-          : ({} as LocalizedUrlObject),
+          ? ({ en: urls("en").mempool.post(post.slug) } as Record<string, string>)
+          : ({} as Record<string, string>),
       ),
     },
   }));
@@ -117,7 +117,7 @@ async function getPodcastsUrls(): Promise<MetadataRoute.Sitemap> {
           obj[formatLocale(locale)] = urls(locale).podcasts.show(podcast.slug);
           return obj;
         },
-        { en: urls("en").podcasts.show(podcast.slug) } as LocalizedUrlObject,
+        { en: urls("en").podcasts.show(podcast.slug) } as Record<string, string>,
       ),
     },
   }));
@@ -141,7 +141,7 @@ async function getPodcastEpisodesUrls(): Promise<MetadataRoute.Sitemap> {
             episode.podcastSlug,
             episode.episodeSlug,
           ),
-        } as LocalizedUrlObject,
+        } as Record<string, string>,
       ),
     },
   }));

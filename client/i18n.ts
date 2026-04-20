@@ -34,22 +34,12 @@ export const locales = [
   "zh-cn",
 ] as const;
 
-export const i18nLocales = [
-  "ar",
-  "de",
-  "en",
-  "es",
-  "fa",
-  "fi",
-  "fr",
-  "he",
-  "it",
-  "ko",
-  "pt-BR",
-  "ru",
-  "tr",
-  "vi",
-  "zh-CN",
-] as const;
+export const canonicalLocales = locales.map(
+  (l) => Intl.getCanonicalLocales(l)[0],
+);
 
 export const defaultLocale = "en";
+
+export function isLocale(value: string): value is (typeof locales)[number] {
+  return (locales as readonly string[]).includes(value);
+}

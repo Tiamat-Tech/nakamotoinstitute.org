@@ -1,6 +1,8 @@
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 import { openGraphImages } from "@/app/shared-metadata";
+import { isLocale } from "@/i18n";
 import { i18nTranslation } from "@/lib/i18n/i18nTranslation";
 import { xHandle } from "@/lib/urls-client";
 import { APP_BASE_URL } from "@/lib/urls";
@@ -10,7 +12,7 @@ import { RootLayout } from "../components/RootLayout";
 export async function generateMetadata(props: LocaleParams): Promise<Metadata> {
   const { locale } = await props.params;
 
-  const { t } = await i18nTranslation(locale as Locale);
+  const { t } = await i18nTranslation(locale);
   const siteTitle = t("sni_full");
   return {
     metadataBase: new URL(APP_BASE_URL),
@@ -30,6 +32,7 @@ export async function generateMetadata(props: LocaleParams): Promise<Metadata> {
 
 export default async function MainLayout(props: LayoutProps<"/[locale]">) {
   const { locale } = await props.params;
+  if (!isLocale(locale)) notFound();
 
-  return <RootLayout locale={locale as Locale}>{props.children}</RootLayout>;
+  return <RootLayout locale={locale}>{props.children}</RootLayout>;
 }

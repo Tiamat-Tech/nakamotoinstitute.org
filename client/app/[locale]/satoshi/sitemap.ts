@@ -12,7 +12,7 @@ import {
   api,
 } from "@/lib/api";
 import { urls } from "@/lib/urls";
-import { LocalizedUrlObject, createLocalizedUrlObject } from "@/utils/sitemap";
+import { createLocalizedUrlObject } from "@/utils/sitemap";
 import { formatLocale } from "@/utils/strings";
 
 async function getEmailIndexUrls(): Promise<MetadataRoute.Sitemap> {
@@ -111,7 +111,7 @@ async function getQuoteCategoryUrls(): Promise<MetadataRoute.Sitemap> {
       languages: locales.reduce((obj, locale) => {
         obj[formatLocale(locale)] = urls(locale).satoshi.quoteCategory(slug);
         return obj;
-      }, {} as LocalizedUrlObject),
+      }, {} as Record<string, string>),
     },
   }));
 }

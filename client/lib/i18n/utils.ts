@@ -1,4 +1,5 @@
 import { locales } from "@/i18n";
+import { formatLocale } from "@/utils/strings";
 
 type LocaleParam = { locale: Locale; [key: string]: unknown };
 type CallbackResponse = (locale: Locale) => LocaleParam[];
@@ -25,11 +26,8 @@ export const generateHrefLangs = (
   _locales: readonly Locale[],
   generateHref: (_locale: Locale) => string,
 ) => {
-  return _locales.reduce(
-    (acc, locale) => {
-      acc[locale] = generateHref(locale);
-      return acc;
-    },
-    {} as Record<Locale, string>,
-  );
+  return _locales.reduce<Record<string, string>>((acc, locale) => {
+    acc[formatLocale(locale)] = generateHref(locale);
+    return acc;
+  }, {});
 };
