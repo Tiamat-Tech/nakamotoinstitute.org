@@ -1,6 +1,8 @@
-import { ReactOptions, createInstance } from "i18next";
+import { createInstance } from "i18next";
 import resourcesToBackend from "i18next-resources-to-backend";
+import { cache } from "react";
 import { initReactI18next } from "react-i18next/initReactI18next";
+import "server-only";
 
 import { getOptions } from "./settings";
 
@@ -18,18 +20,12 @@ const initI18next = async (locale: Locale, ns: string | string[]) => {
   return i18nInstance;
 };
 
-export async function i18nTranslation(
-  locale: Locale,
-  ns: string | string[] = "common",
-  options: ReactOptions = {},
-) {
-  const i18nextInstance = await initI18next(locale, ns);
-  return {
-    t: i18nextInstance.getFixedT(
-      locale,
-      Array.isArray(ns) ? ns[0] : ns,
-      options.keyPrefix,
-    ),
-    i18n: i18nextInstance,
-  };
-}
+export const i18nTranslation = cache(
+  async (locale: Locale, ns: string | string[] = "common") => {
+    const i18nextInstance = await initI18next(locale, ns);
+    return {
+      t: i18nextInstance.getFixedT(locale, Array.isArray(ns) ? ns[0] : ns),
+      i18n: i18nextInstance,
+    };
+  },
+);
