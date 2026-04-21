@@ -54,7 +54,7 @@ export async function generateMetadata(
 }
 
 type ThreadPostProps = {
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
   locale: Locale;
   post: ForumPost;
   odd: boolean;

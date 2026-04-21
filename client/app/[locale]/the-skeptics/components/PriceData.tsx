@@ -78,7 +78,7 @@ function PriceDatum({
 }
 
 type SkepticPriceDataProps = {
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
   locale: Locale;
   priceData: DCAData;
 };

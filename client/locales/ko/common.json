@@ -10,6 +10,7 @@
   "events": "이벤트",
   "no_events_message": "현재 예정된 이벤트가 없습니다.",
   "hal_finney": "할 피니",
+  "rpow": "RPOW",
   "rpow_title": "RPOW - 재사용할 수 있는 작업 증명",
   "archived_website": "보관된 웹사이트",
   "github": "GitHub",

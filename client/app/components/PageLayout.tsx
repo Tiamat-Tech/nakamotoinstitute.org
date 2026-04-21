@@ -18,7 +18,7 @@ import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
 
 export type PageLayoutProps = {
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
   className?: string;
   generateHref?: (locale: Locale) => string;
   size?: "md" | "lg" | "xl";

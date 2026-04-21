@@ -3,7 +3,7 @@ import { TFunction } from "i18next";
 import { ToggleLink } from "@/app/components/ToggleLink";
 
 type ThreadPageHeaderProps = {
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
   title: string;
   sourceTitle: string;
   satoshiOnly: boolean;

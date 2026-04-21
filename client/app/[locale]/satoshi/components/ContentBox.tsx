@@ -36,7 +36,7 @@ export async function ContentBox({
 }
 
 export type ContentBoxHeaderProps = {
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
   locale: Locale;
   satoshi?: boolean;
   source?: string;
@@ -153,7 +153,7 @@ export async function ContentBoxBody({
 }
 
 export type ContentBoxDisclaimerProps = {
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
   disclaimer: string;
 };
 
@@ -173,7 +173,7 @@ export async function ContentBoxDisclaimer({
 }
 
 export type ContentBoxFooterProps = {
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
   hrefs: {
     original: string;
     thread?: UrlObject;

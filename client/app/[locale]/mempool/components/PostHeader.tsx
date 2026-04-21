@@ -9,7 +9,7 @@ import { urls } from "@/lib/urls";
 import { formatDate } from "@/utils/dates";
 
 type SeriesHeaderProps = {
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
   locale: Locale;
   series: MempoolSeriesBase;
   seriesIndex: number;
@@ -34,7 +34,7 @@ async function SeriesHeader({
           <Trans
             t={t}
             i18nKey="chapter_index"
-            values={{ index: seriesIndex }}
+            values={{ index: String(seriesIndex) }}
           />
         </p>
       ) : null}
@@ -43,7 +43,7 @@ async function SeriesHeader({
 }
 
 type PostHeaderProps = {
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
   locale: Locale;
   post: MempoolPost;
 };
@@ -84,7 +84,7 @@ export async function PostHeader({ t, locale, post }: PostHeaderProps) {
             <Trans
               t={t}
               i18nKey="first_published"
-              values={{ originalSite: post.originalSite }}
+              values={{ originalSite: post.originalSite ?? "" }}
               components={{
                 em: <em className="not-italic" />,
                 a: (

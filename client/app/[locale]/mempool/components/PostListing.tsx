@@ -33,7 +33,7 @@ export function PostListingAuthors({
 }
 
 type PostListingProps = {
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
   className?: string;
   locale: Locale;
   post: MempoolPostIndex;

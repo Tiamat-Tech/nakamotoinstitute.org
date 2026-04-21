@@ -79,7 +79,7 @@ export default async function EpisodeDetail(
     >
       <header className="mx-auto text-center">
         <h2 className="small-caps mb-4 text-2xl leading-[1.1] md:mb-6 md:text-4xl">
-          {t("episode_number", { number: episode.episodeNumber })}
+          {t("episode_number", { number: String(episode.episodeNumber ?? "") })}
         </h2>
         <h1 className="mb-4 text-4xl leading-[1.1] font-medium md:mb-6 md:text-7xl">
           {episode.title}

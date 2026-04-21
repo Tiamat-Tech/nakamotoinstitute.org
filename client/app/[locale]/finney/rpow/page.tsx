@@ -42,7 +42,7 @@ export default async function RPOWPage(props: LocaleParams) {
       generateHref={generateHref}
       breadcrumbs={[
         { label: t("hal_finney"), href: urls(locale).finney.index },
-        { label: t("RPOW"), href: urls(locale).finney.rpow },
+        { label: t("rpow"), href: urls(locale).finney.rpow },
       ]}
     >
       <PageHeader title={t("rpow_title")} />

@@ -13,7 +13,7 @@ import { SkepticPriceData, formatAmount } from "./PriceData";
 const DAILY_BUY = new Big(1);
 
 type SkepticProps = {
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
   locale: Locale;
   skeptic: Skeptic;
   prices: Price[];

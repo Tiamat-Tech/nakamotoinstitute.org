@@ -54,7 +54,7 @@ export async function generateMetadata(
 }
 
 type ThreadEmailProps = {
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
   locale: Locale;
   email: ThreadEmailType;
   odd: boolean;

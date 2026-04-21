@@ -8,7 +8,7 @@ import { formatDocDate, formatTimeAttr } from "@/utils/dates";
 import { DocFormatLinksContainer, getDocFormatLinks } from "./DocFormats";
 
 type DocHeaderProps = {
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
   locale: Locale;
   doc: Document;
 };

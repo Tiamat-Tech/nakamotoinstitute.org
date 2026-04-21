@@ -35,7 +35,7 @@ type DocListingProps = {
   doc: DocumentIndex;
   className?: string;
   locale: Locale;
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
 };
 
 export function DocListing({ doc, className, locale, t }: DocListingProps) {

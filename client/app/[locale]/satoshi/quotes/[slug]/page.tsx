@@ -47,7 +47,7 @@ export async function generateMetadata(
 }
 
 type SatoshiQuoteProps = {
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
   locale: Locale;
   quote: Quote;
 };

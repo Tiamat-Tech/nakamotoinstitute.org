@@ -22,7 +22,7 @@ function CodeTableRow({ label, children }: CodeTableRowProps) {
 }
 
 type CodeTableProps = {
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
   locale: Locale;
   title: string;
   date: Date;

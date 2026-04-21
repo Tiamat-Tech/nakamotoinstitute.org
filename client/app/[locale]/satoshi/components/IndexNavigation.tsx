@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { TFunction } from "i18next";
 
 type ToggleLinksProps = {
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
   active: "individual" | "threads";
   href: string;
   individualLabel: string;
@@ -63,7 +63,7 @@ export type SourceLink =
 export type ToggleLinks = { active: "individual" | "threads"; href: string };
 
 export type IndexNavigationProps = {
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
   type: "emails" | "posts";
   sourceLinks: SourceLink[];
   toggleLinks: ToggleLinks;

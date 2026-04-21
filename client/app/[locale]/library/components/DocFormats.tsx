@@ -11,7 +11,7 @@ async function DocFormatButtonLink({ className, ...rest }: ButtonLinkProps) {
 }
 
 type DocFormatLinkProps = {
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
   locale: Locale;
   doc: Document;
   buttonClassName?: string;
@@ -102,7 +102,7 @@ export function DocFormatLinksContainer({
 }
 
 type DocFormatChipsProps = {
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
   className?: string;
   doc: DocumentIndex;
 };

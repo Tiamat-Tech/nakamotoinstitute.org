@@ -10,7 +10,7 @@ type PodcastListingProps = {
   podcast: PodcastBase;
   className?: string;
   locale: Locale;
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
 };
 
 export function PodcastListing({

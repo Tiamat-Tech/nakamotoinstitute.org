@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "translate:extract": "i18next -c ./i18next-parser.config.js --fail-on-warnings",
+    "translate:extract": "i18next-cli extract",
+    "translate:types": "i18next-cli types",
     "generate-api": "openapi-ts && bun scripts/fix-generated-dates.ts"
   },
   "dependencies": {

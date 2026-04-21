@@ -8,7 +8,7 @@ import { cdnUrl, externalUrls, urls } from "@/lib/urls";
 import { DonationLink } from "./DonationLink";
 
 type FooterProps = {
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
   locale: Locale;
 };
 

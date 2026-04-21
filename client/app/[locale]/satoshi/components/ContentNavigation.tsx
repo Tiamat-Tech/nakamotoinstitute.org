@@ -35,7 +35,7 @@ const ContentNavigation = async ({
 };
 
 type NavProps<Data, Source> = {
-  t: TFunction<string, string>;
+  t: TFunction<"common">;
   locale: Locale;
   id: number;
   previous: Data | null;
