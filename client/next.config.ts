@@ -2,7 +2,6 @@ import type { NextConfig } from "next";
 
 import { env } from "./env";
 import { defaultLocale, locales } from "./i18n";
-import { externalUrls } from "./lib/urls-client";
 
 const satoshiDestination = `${
   env.VERCEL_ENV === "development" ? "http://" : "https://"
@@ -34,11 +33,6 @@ const nextConfig: NextConfig = {
         source: "/bitcoin.pdf",
         destination: `${cdnBaseUrl}/docs/bitcoin.pdf`,
         permanent: true,
-      },
-      {
-        source: "/donate/",
-        destination: externalUrls.zaprite,
-        permanent: false,
       },
     ];
     if (
