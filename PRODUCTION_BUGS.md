@@ -9,7 +9,7 @@ Mark items done with `[x]`.
 Fix-review verdict: all 10 uncommitted fixes address real bugs at HEAD; 9 correct as written, 1 amended.
 
 - [x] Commit the current working tree (B1–B10 fixes). Includes the B1 amendment already applied: `[locale]/error.tsx` wraps fallback in `<body>` (PageLayout owns `<body>` in this app; without it SSR'd errors emit invalid HTML + hydration mismatch), `global-error.tsx` `<html>` got `bg-cream text-dark font-serif`.
-  - B2 authors en locale, B3 renderer escaping (verified: no double-escape; changes stored html_content → needs re-import, Phase 3), B4 translation canonical fallback, B5 feed hardening (404 on empty feed; client routes fail loud), B6 donate redirect removed, B7 Markdown className, B8 optional `locale` param + regenerated SDK, B9 orphaned locale keys pruned (all verified unreferenced), B10 node hasMath (verified AliasPath resolves; latent until a math book exists)
+  - B2 authors en locale, B3 renderer escaping (verified: no double-escape; changes stored html_content → needs re-import, Phase 3), B4 translation canonical fallback, B5 feed hardening (404 on empty feed; client routes fail loud), B6 donate redirect removed (**reverted 2026-07-10** — keeping the en /donate/ → Zaprite redirect), B7 Markdown className, B8 optional `locale` param + regenerated SDK, B9 orphaned locale keys pruned (all verified unreferenced), B10 node hasMath (verified AliasPath resolves; latent until a math book exists)
 
 ## Phase 1 — client P0s (open, from BUG_AUDIT)
 
